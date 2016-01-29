@@ -2,7 +2,7 @@
 //import 'echarts/lib/chart/pie';
 
 define(function (require) {
-  return function HistogramVisType(Private) {
+
 
    // var VislibVisType = Private(require('ui/vislib_vis_type/VislibVisType'));
     var TemplateVisType = Private(require('ui/template_vis_type/TemplateVisType'));
@@ -35,5 +35,5 @@ define(function (require) {
           }
         ])
     });
-  };
+
 });
