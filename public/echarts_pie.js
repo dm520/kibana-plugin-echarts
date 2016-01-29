@@ -10,7 +10,7 @@ define(function (require) {
       title: 'Echarts Pie', // The title of the visualization, shown to the user
       description: 'Echarts Pie visualization', // The description of this vis
       icon: 'fa-cloud', // The font awesome icon of this visualization
-      template: require('plugins/kibana-plugin-echarts/template/pie.html'), // The template, that will be rendered for this visualization
+      template: require('plugins/kibana-plugin-echarts/echarts_pie.html'), // The template, that will be rendered for this visualization
       // Define the aggregation your visualization accepts
       schemas: new Schemas([
           {
