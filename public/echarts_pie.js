@@ -1,5 +1,5 @@
-import echarts from 'echarts/lib/echarts';
-import 'echarts/lib/chart/pie';
+//import echarts from 'echarts/lib/echarts';
+//import 'echarts/lib/chart/pie';
 
 define(function(require) {
   // var VislibVisType = Private(require('ui/vislib_vis_type/VislibVisType'));
