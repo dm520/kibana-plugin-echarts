@@ -1,5 +1,6 @@
 //import echarts from 'echarts/lib/echarts';
 //import 'echarts/lib/chart/pie';
+require('plugins/kibana-plugin-echarts/echartsPieController');
 
 define(function(require) {
   // var VislibVisType = Private(require('ui/vislib_vis_type/VislibVisType'));
