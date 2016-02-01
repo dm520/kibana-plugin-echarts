@@ -1,6 +1,3 @@
-<div lass="tagcloud">
-	<span>label
-	
-	dd </span>
-	
+<div ng-controller="EchartsPieController" class="tagcloud">
+	<span class="tag" ng-click="filter(tag)" ng-repeat="tag in tags" ng-style="{'font-size': tag.fontSize + 'px'}">{{tag.label}}</span>
 </div>
