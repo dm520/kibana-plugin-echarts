@@ -1,5 +1,5 @@
-// import echarts from 'echarts/lib/echarts';
-// import 'echarts/lib/chart/pie';
+import echarts from 'echarts/lib/echarts';
+import 'echarts/lib/chart/pie';
 
 define(function(require) {
   // var VislibVisType = Private(require('ui/vislib_vis_type/VislibVisType'));
@@ -7,8 +7,7 @@ define(function(require) {
     var TemplateVisType = Private(require('ui/template_vis_type/TemplateVisType'));
     var Schemas = Private(require('ui/Vis/Schemas'));
     return new TemplateVisType({
-      name: 'echarts_pie', // The internal id of the visualization (must be
-                            // unique)
+      name: 'echarts_pie', // The internal id of the visualization (must be unique)
       title: 'Echarts Pie', // The title of the visualization, shown to the user
       description: 'Echarts Pie visualization', // The description of this vis
       icon: 'fa-cloud', // The font awesome icon of this visualization
