@@ -1,11 +1,10 @@
 // Create an Angular module for this plugin
-var module = require('ui/modules').get('tr-k4p-tagcloud');
+var module = require('ui/modules').get('kibana-plugin-echarts');
 
 // Minimum and maximum font size tags should have.
-var maxFontSize = 32,
-	minFontSize = 12;
+var maxFontSize = 32,minFontSize = 12;
 
-module.controller('TagcloudController', function($scope, Private) {
+module.controller('EchartsPieController', function($scope, Private) {
 
 	var filterManager = Private(require('ui/filter_manager'));
 
@@ -28,6 +27,7 @@ module.controller('TagcloudController', function($scope, Private) {
 			$scope.tags = null;
 			return;
 		}
+		console.log(resp);
 
 		// Retrieve the id of the configured tags aggregation
 		var tagsAggId = $scope.vis.aggs.bySchemaName['tags'][0].id;
