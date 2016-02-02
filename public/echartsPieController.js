@@ -42,13 +42,36 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
       if (!resp) {
         return;
       }
-      notify.timed('Echarts Pie Controller', resp);
+     
       console.log("--------------resp---------------------");
       console.log(resp);
       var tableGroups = tabifyAggResponse($scope.vis, resp);
       console.log(tableGroups)
       console.log("--------------mychart---------------------");
+      var data=[],legendData=[],
+      tableGroups.tables.forEach(function (table) {
+        var cols = table.columns;
+        data= [] ; 
+        table.rows.forEach(function (row,i) {
+
+         // for (var i = 1; i < row.length; i++) {
+            var item = {};
+            item.name = row[0];//cols[i].aggConfig.params.field.displayName;
+            item.value = row[i];
+            data.push(item);
+            legendData.push(row[0]);
+         // }
+
+          //data.push(group);
+        });
+      });
+      
+      
       let mychart = echarts.init($element.get(0));
+      option.legend.data=legendData;
+      option.series.data=data;
       mychart.setOption(option);
+      
+      return  notify.timed('Echarts Pie Controller', resp);
     });
   });
