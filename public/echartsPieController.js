@@ -14,7 +14,7 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
           legend: {
               orient: 'vertical',
               x: 'left',
-              data:[]
+              data:["dm"]
           },
           series: [
               {
@@ -33,7 +33,7 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
                           show: false
                       }
                   },
-                  data:[]
+                  data:[{name:"dm",value:123}]
               }
           ]
       };
@@ -54,8 +54,7 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
         data= [], legendData=[]; 
         table.rows.forEach(function (row,i) {
 
-         // for (var i = 1; i < row.length; i++) {
-          console.log(row)
+          console.log(row[0])
           console.log(row[0].toString())
           console.log(row[1])
             var item = {};
@@ -64,9 +63,6 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
             item.value = row[1];
             data.push(item);
             legendData.push(name);
-         // }
-
-          //data.push(group);
         });
       });
       
