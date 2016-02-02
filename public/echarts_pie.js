@@ -20,8 +20,8 @@ define(function(require) {
           addTooltip: true,
           addLegend: true,
           isDonut: false
-        },
-        editor: require('plugins/kibana-plugin-echarts/echarts_pie_editor.html')
+        }//,
+        //editor: require('plugins/kibana-plugin-echarts/echarts_pie_editor.html')
       },
       responseConverter: false,
       hierarchicalData: true,
