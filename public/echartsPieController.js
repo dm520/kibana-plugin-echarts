@@ -68,7 +68,7 @@ import 'echarts/lib/chart/pie';
               }
           ]
       };
-    let mychart = echarts.init($element);
+    let mychart = echarts.init($element.get(0));
     
     mychart.setOption(option);
     
