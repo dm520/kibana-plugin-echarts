@@ -1,18 +1,21 @@
-import echarts from 'echarts/lib/echarts';
-import 'echarts/lib/chart/pie';
-require('plugins/kibana-plugin-echarts/echartsPieController');
-
 define(function(require) {
-  // var VislibVisType = Private(require('ui/vislib_vis_type/VislibVisType'));
-  return function HistogramVisType(Private) {
+
+  // we also need to load the controller and used by the template
+  require('plugins/kibana-plugin-echarts/echartsPieController');
+
+  // register the provider with the visTypes registry
+  require('ui/registry/vis_types').register(EchartsHistogramVisType);
+
+  function EchartsHistogramVisType(Private) {
     var TemplateVisType = Private(require('ui/template_vis_type/TemplateVisType'));
     var Schemas = Private(require('ui/Vis/Schemas'));
     return new TemplateVisType({
-      name: 'echarts_pie', // The internal id of the visualization (must be unique)
+      name: 'echarts_pie', // The internal id of the visualization
+      // (must be unique)
       title: 'Echarts Pie', // The title of the visualization, shown to the user
       description: 'Echarts Pie visualization', // The description of this vis
       icon: 'fa-cloud', // The font awesome icon of this visualization
-      template: require('plugins/kibana-plugin-echarts/echarts_pie.html'), 
+      template: require('plugins/kibana-plugin-echarts/echarts_pie.html'),
       // Define the aggregation your visualization accepts
       schemas: new Schemas([{
         group: 'metrics',
@@ -30,5 +33,6 @@ define(function(require) {
         aggFilter: '!geohash_grid'
       }])
     });
-  };
+  }
+  ;
 });
