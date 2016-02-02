@@ -48,7 +48,7 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
       var tableGroups = tabifyAggResponse($scope.vis, resp);
       console.log(tableGroups)
       console.log("--------------mychart---------------------");
-      var data=[],legendData=[],
+      var data=[],legendData=[];
       tableGroups.tables.forEach(function (table) {
         var cols = table.columns;
         data= [] ; 
