@@ -11,7 +11,7 @@ define(function(require) {
     var Schemas = Private(require('ui/Vis/Schemas'));
     return new TemplateVisType({
       name: 'echarts_pie',
-      title: 'Pie chart',
+      title: 'Echarts Pie',
       icon: 'fa-pie-chart',
       description: 'Pie charts are ideal for displaying the parts of some whole. For example, sales percentages by department.' + 'Pro Tip: Pie charts are best used sparingly, and with no more than 7 slices per pie.',
       template: require('plugins/kibana-plugin-echarts/echarts_pie.html'),

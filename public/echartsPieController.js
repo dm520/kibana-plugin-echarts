@@ -54,7 +54,6 @@ import 'echarts/lib/chart/pie';
                   name:'访问来源',
                   type:'pie',
                   radius: ['40%', '55%'],
-
                   data:[
                       {value:335, name:'直达'},
                       {value:310, name:'邮件营销'},
@@ -68,16 +67,12 @@ import 'echarts/lib/chart/pie';
               }
           ]
       };
-   
-    
-   
-    
 
     $scope.$watch('esResponse', function(resp) {
       if (!resp) {
-        $scope.tags = null;
         return;
       }
+      console.log("--------------resp---------------------");
       console.log(resp);
       console.log("--------------mychart---------------------");
       let mychart = echarts.init($element.get(0));
