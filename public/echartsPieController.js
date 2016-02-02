@@ -1,4 +1,6 @@
-define(function(require) {
+  import echarts from 'echarts/lib/echarts';
+  import 'echarts/lib/chart/pie';
+//define(function(require) {
   // get the kibana/metric_vis module, and make sure that it requires the
   // 'kibana' module if it
   // didn't already
@@ -7,10 +9,9 @@ define(function(require) {
   // var d3 = require('d3');
   // Create an Angular module for this plugin
   var module = require('ui/modules').get('kibana-plugin-echarts');
-  var d3 = require('echarts');
+ // var d3 = require('echarts');
   
-  import echarts from 'echarts/lib/echarts';
-  import 'echarts/lib/chart/pie';
+
   
   module.controller('EchartsPieController', function($scope, $element, $rootScope, Private) {
     
@@ -102,4 +103,4 @@ define(function(require) {
       });
     });
   });
-});
+//});
