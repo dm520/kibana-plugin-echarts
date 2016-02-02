@@ -55,11 +55,15 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
         table.rows.forEach(function (row,i) {
 
          // for (var i = 1; i < row.length; i++) {
+          console.log(row)
+          console.log(row[0].toString())
+          console.log(row[1])
             var item = {};
-            item.name = row[0];//cols[i].aggConfig.params.field.displayName;
-            item.value = row[i];
+            var name = row[0].toString()
+            item.name = name;//cols[i].aggConfig.params.field.displayName;
+            item.value = row[1];
             data.push(item);
-            legendData.push(row[0]);
+            legendData.push(name);
          // }
 
           //data.push(group);
