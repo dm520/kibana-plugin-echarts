@@ -14,15 +14,16 @@ define(function(require) {
       title: 'Pie chart',
       icon: 'fa-pie-chart',
       description: 'Pie charts are ideal for displaying the parts of some whole. For example, sales percentages by department.' + 'Pro Tip: Pie charts are best used sparingly, and with no more than 7 slices per pie.',
-//      params: {
-//        defaults: {
-//          shareYAxis: true,
-//          addTooltip: true,
-//          addLegend: true,
-//          isDonut: false
-//        },
-//        editor: require('plugins/kibana-plugin-echarts/echarts_pie_editor.html')
-//      },
+      template: require('plugins/kibana-plugin-echarts/echarts_pie.html'),
+      params: {
+        defaults: {
+          shareYAxis: true,
+          addTooltip: true,
+          addLegend: true,
+          isDonut: false
+        },
+        editor: require('plugins/kibana-plugin-echarts/echarts_pie_editor.html')
+      },
       responseConverter: false,
       hierarchicalData: true,
       schemas: new Schemas([{
