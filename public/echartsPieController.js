@@ -3,9 +3,9 @@ import 'echarts/lib/chart/pie';
 
 var module = require('ui/modules').get('kibana-plugin-echarts');
 
-module.controller('EchartsPieController', function($scope, $element, $rootScope, Private) {
+module.controller('EchartsPieController', function($scope, $element, $rootScope, Private, Notifier) {
   var tabifyAggResponse = Private(require('ui/agg_response/tabify/tabify'));
-  
+  var notify = new Notifier({ location: 'kibana-plugin-echarts/EchartsPieController'});
   var option = {
             tooltip: {
               trigger: 'item',
@@ -42,6 +42,7 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
       if (!resp) {
         return;
       }
+      notify.timed('Echarts Pie Controller', resp);
       console.log("--------------resp---------------------");
       console.log(resp);
       var tableGroups = tabifyAggResponse($scope.vis, resp);
