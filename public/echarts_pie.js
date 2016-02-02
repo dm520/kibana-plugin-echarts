@@ -13,7 +13,7 @@ define(function(require) {
       name: 'echarts_pie',
       title: 'Echarts Pie',
       icon: 'fa-pie-chart',
-      description: 'Pie charts are ideal for displaying the parts of some whole. For example, sales percentages by department.' + 'Pro Tip: Pie charts are best used sparingly, and with no more than 7 slices per pie.',
+      description: '测试Echarts Pie',
       template: require('plugins/kibana-plugin-echarts/echarts_pie.html'),
       params: {
         defaults: {
