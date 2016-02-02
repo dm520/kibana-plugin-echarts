@@ -51,7 +51,7 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
      
       tableGroups.tables.forEach(function (table) {
         var cols = table.columns;
-        data= [] ; 
+        data= [], legendData=[]; 
         table.rows.forEach(function (row,i) {
 
          // for (var i = 1; i < row.length; i++) {
