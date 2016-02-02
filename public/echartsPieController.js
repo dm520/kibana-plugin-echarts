@@ -1,5 +1,5 @@
- // import echarts from 'echarts/lib/echarts';
- // import 'echarts/lib/chart/pie';
+import echarts from 'echarts/lib/echarts';
+import 'echarts/lib/chart/pie';
 //define(function(require) {
   // get the kibana/metric_vis module, and make sure that it requires the
   // 'kibana' module if it
