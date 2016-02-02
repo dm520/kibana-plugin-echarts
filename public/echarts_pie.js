@@ -10,7 +10,7 @@ define(function(require) {
     var TemplateVisType = Private(require('ui/template_vis_type/TemplateVisType'));
     var Schemas = Private(require('ui/Vis/Schemas'));
     return new TemplateVisType({
-      name: 'echarts-pie',
+      name: 'echarts_pie',
       title: 'Pie chart',
       icon: 'fa-pie-chart',
       description: 'Pie charts are ideal for displaying the parts of some whole. For example, sales percentages by department.' + 'Pro Tip: Pie charts are best used sparingly, and with no more than 7 slices per pie.',
