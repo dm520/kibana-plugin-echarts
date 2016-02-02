@@ -1,15 +1,14 @@
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/pie';
-//define(function(require) {
   // get the kibana/metric_vis module, and make sure that it requires the
   // 'kibana' module if it
   // didn't already
   // var module = require('ui/modules').get('kibana/kibi_radar_vis',
   // ['kibana']);
-  // var d3 = require('d3');
+
   // Create an Angular module for this plugin
   var module = require('ui/modules').get('kibana-plugin-echarts');
- // var d3 = require('echarts');
+
   
 
   
@@ -17,6 +16,7 @@ import 'echarts/lib/chart/pie';
     
     
     console.log($element);
+    console.log("----------$element----------");
     var option = {
             tooltip: {
               trigger: 'item',
@@ -68,9 +68,9 @@ import 'echarts/lib/chart/pie';
               }
           ]
       };
-    let mychart = echarts.init($element.get(0));
+   
     
-    mychart.setOption(option);
+   
     
 
     $scope.$watch('esResponse', function(resp) {
@@ -79,30 +79,8 @@ import 'echarts/lib/chart/pie';
         return;
       }
       console.log(resp);
-
-      // Retrieve the id of the configured tags aggregation
-      var tagsAggId = $scope.vis.aggs.bySchemaName['tags'][0].id;
-      // Retrieve the metrics aggregation configured
-      var metricsAgg = $scope.vis.aggs.bySchemaName['tagsize'][0];
-      console.log(metricsAgg);
-      // Get the buckets of that aggregation
-      var buckets = resp.aggregations[tagsAggId].buckets;
-
-      var min = Number.MAX_VALUE, max = -Number.MAX_VALUE;
-
-      // Transform all buckets into tag objects
-      $scope.tags = buckets.map(function(bucket) {
-        // Use the getValue function of the aggregation to get the value of a
-        // bucket
-        var value = metricsAgg.getValue(bucket);
-        // Finding the minimum and maximum value of all buckets
-        min = Math.min(min, value);
-        max = Math.max(max, value);
-        return {
-          label: bucket.key,
-          value: value
-        };
-      });
+      console.log("--------------mychart---------------------");
+      let mychart = echarts.init($element.get(0));
+      mychart.setOption(option);
     });
   });
-//});
