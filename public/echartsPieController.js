@@ -37,7 +37,7 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
               }
           ]
       };
-
+    var data=[],legendData=[];
     $scope.$watch('esResponse', function(resp) {
       if (!resp) {
         return;
@@ -48,7 +48,7 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
       var tableGroups = tabifyAggResponse($scope.vis, resp);
       console.log(tableGroups)
       console.log("--------------mychart---------------------");
-      var data=[],legendData=[];
+     
       tableGroups.tables.forEach(function (table) {
         var cols = table.columns;
         data= [] ; 
@@ -74,6 +74,7 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
       let mychart = echarts.init($element.get(0));
       option.legend.data=legendData;
       option.series.data=data;
+      console.log(option)
       mychart.setOption(option);
       
       return  notify.timed('Echarts Pie Controller', resp);
