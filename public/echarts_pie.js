@@ -21,7 +21,7 @@ define(function(require) {
           addLegend: true,
           isDonut: false
         },
-        editor: require('plugins/kbn_vislib_vis_types/editors/pie.html')
+        editor: require('plugins/kibana-plugin-echarts/echarts_pie_editor.html')
       },
       responseConverter: false,
       hierarchicalData: true,
