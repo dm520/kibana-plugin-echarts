@@ -7,36 +7,36 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
   var tabifyAggResponse = Private(require('ui/agg_response/tabify/tabify'));
   var notify = new Notifier({ location: 'kibana-plugin-echarts/EchartsPieController'});
   var option = {
-            tooltip: {
-              trigger: 'item',
-              formatter: "{a} <br/>{b}: {c} ({d}%)"
-          },
-          legend: {
-              orient: 'vertical',
-              x: 'left',
-              data:["dm"]
-          },
-          series: [
-              {
-                  name:'饼图',
-                  type:'pie',
-                  selectedMode: 'single',
-                  radius: [0, '30%'],
+          tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            x: 'left',
+            data:["dm"]
+        },
+        series: [
+            {
+                name:'饼图',
+                type:'pie',
+                selectedMode: 'single',
+                radius: [0, '30%'],
 
-                  label: {
-                      normal: {
-                          position: 'inner'
-                      }
-                  },
-                  labelLine: {
-                      normal: {
-                          show: false
-                      }
-                  },
-                  data:[{name:"dm",value:123}]
-              }
-          ]
-      };
+                label: {
+                    normal: {
+                        position: 'inner'
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[{name:"dm",value:123}]
+            }
+        ]
+    };
     var data=[],legendData=[];
     $scope.$watch('esResponse', function(resp) {
       if (!resp) {
@@ -49,7 +49,7 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
       console.log(tableGroups)
       console.log("--------------mychart---------------------");
      
-      tableGroups.tables.forEach(function (table) {
+      tableGroups.tables.forEach(function (table,index) {
         var cols = table.columns;
         data= [], legendData=[]; 
         table.rows.forEach(function (row,i) {
@@ -64,12 +64,14 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
             data.push(item);
             legendData.push(name);
         });
+        option.series[index].data=data;
       });
       
       
       let mychart = echarts.init($element.get(0));
+
       option.legend.data=legendData;
-      option.series.data=data;
+     
       console.log(option)
       mychart.setOption(option);
       
