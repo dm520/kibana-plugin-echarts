@@ -4,9 +4,9 @@ define(function(require) {
   require('plugins/kibana-plugin-echarts/echartsPieController');
 
   // register the provider with the visTypes registry
-  require('ui/registry/vis_types').register(EchartsHistogramVisType);
+ // require('ui/registry/vis_types').register(EchartsHistogramVisType);
 
-  function EchartsHistogramVisType(Private) {
+ return  function EchartsHistogramVisType(Private) {
     var TemplateVisType = Private(require('ui/template_vis_type/TemplateVisType'));
     var Schemas = Private(require('ui/Vis/Schemas'));
     return new TemplateVisType({
@@ -34,5 +34,4 @@ define(function(require) {
       }])
     });
   }
-  ;
 });
