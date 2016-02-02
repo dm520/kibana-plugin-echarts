@@ -6,6 +6,7 @@ var module = require('ui/modules').get('kibana-plugin-echarts');
 module.controller('EchartsPieController', function($scope, $element, $rootScope, Private, Notifier) {
   var tabifyAggResponse = Private(require('ui/agg_response/tabify/tabify'));
   var notify = new Notifier({ location: 'kibana-plugin-echarts/EchartsPieController'});
+  let mychart = echarts.init($element.get(0));
   var option = {
           tooltip: {
             trigger: 'item',
@@ -66,14 +67,10 @@ module.controller('EchartsPieController', function($scope, $element, $rootScope,
         });
         option.series[index].data=data;
       });
-      
-      
-      let mychart = echarts.init($element.get(0));
 
       option.legend.data=legendData;
-     
-      console.log(option)
-      mychart.setOption(option);
+
+      mychart.setOption(option,true);
       
       return  notify.timed('Echarts Pie Controller', resp);
     });
